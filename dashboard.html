@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeNeed - Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6jnEhPkXdH1YsMKfQD4MwcAacsJlUjM8&libraries=geometry,visualization" defer></script>
+    <script type="module" src="dashboard.js" defer></script>
+</head>
+<body>
+    <p id="user-email"></p> <!-- Display user email here -->
+
+    <script>
+        // Retrieve the user email from localStorage
+        const userEmail = localStorage.getItem('userEmail');
+
+        if (userEmail) {
+            // Display the email on the dashboard
+            document.getElementById('user-email').textContent = `Logged in as: ${userEmail}`;
+        } else {
+            // If no email is found (user is not logged in), redirect to login page
+            window.location.href = 'login.html';
+        }
+    </script>
+    <!-- Modal for Add Request -->
+    <div id="request-modal" class="modal hidden">
+        <div class="modal-content">
+            <h2>Add New Request</h2>
+            <form id="request-form">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" required>
+                
+                <label for="request">Request Description:</label>
+                <input type="text" id="request" required>
+                
+                <label for="address">Complete Address:</label>
+                <textarea id="address" rows="3" required></textarea>
+                
+                <label for="pincode">Pincode:</label>
+                <input type="text" id="pincode" required>
+
+                <!-- Phone Number -->
+                <label for="phone">Phone Number:</label>
+                <div id="phone-input">
+                    <select id="country-code">
+                        <option value="+1">+1 (US)</option>
+                        <option value="+91">+91 (India)</option>
+                        <option value="+44">+44 (UK)</option>
+                        <!-- Add more country codes as needed -->
+                    </select>
+                    <input type="text" id="phone" placeholder="Enter your number" required>
+                </div>
+
+                <!-- Urgency -->
+                <label for="urgency">Urgency:</label>
+                <div id="urgency-options">
+                    <label><input type="radio" name="urgency" value="High" required> High</label>
+                    <label><input type="radio" name="urgency" value="Moderate" required> Moderate</label>
+                    <label><input type="radio" name="urgency" value="Low" required> Low</label>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" id="cancel-request">Cancel</button>
+                    <button type="submit" id="submit-request">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="app-container">
+        <!-- Header -->
+        <header>
+            <h1>WeNeed</h1>
+            <p>A platform connecting those who need help with those who can provide it</p>
+        </header>
+
+        <!-- Main Content -->
+        <div id="main-content">
+            <!-- Map Section -->
+            <div id="map-container">
+                <h2>Explore Requests</h2>
+                <div id="map"></div>
+            </div>
+
+            <!-- Nearby Requests Panel -->
+            <div id="nearby-panel" class="hidden">
+                <h3>Nearby Requests (within 3km)</h3>
+                <div id="request-details"></div>
+                <div id="panel-controls">
+                    <button id="accept-request">Accept</button>
+                    <button id="next-request">Next</button>
+                    <button id="close-panel">Close</button>
+                </div>
+            </div>
+            <div id="pending-panel" class="hidden">
+                <h3>Pending Request Details</h3>
+                <div id="pending-request-details">
+                    <!-- Request details will be dynamically added here -->
+                </div>
+            
+                <!-- Navigation and action buttons -->
+                <button id="back-pending-request">Back</button>
+                <button id="next-pending-request">Next</button>
+                <button id="accept-pending-request">Accept Request</button>
+                <button id="cancel-pending-panel">Cancel</button>
+            </div>
+            
+            
+
+            <!-- Actions Section -->
+            <div id="actions-container">
+                <h2>Actions</h2>
+                <button id="view-nearby">View Nearby Requests</button>
+                <!-- <button id="browse-faraway-btn">Browse Faraway Requests</button> -->
+                <button id="add-request">Add Request</button>
+                <button id="view-pending">View Pending Requests</button>
+                <button id="sos-button" class="sos-button" style="background: red;;">SOS</button>
+                <div id="request-details"></div>
+                <button id="toggle-heatmap">Toggle Heatmap</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Include the heatmap.js script -->
+    <script src="heatmap.js"></script>
+</body>
+</html>

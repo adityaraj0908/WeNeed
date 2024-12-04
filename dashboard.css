@@ -1,0 +1,392 @@
+/* General Styling */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* Header */
+header {
+    text-align: center;
+    background-color: #007bff;
+    color: white;
+    padding: 1rem;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+header p {
+    margin: 0.5rem 0 0;
+    font-size: 1rem;
+}
+
+/* Main Content */
+#main-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+}
+
+/* Map Section */
+#map-container {
+    flex: 3;
+    margin-right: 1rem;
+}
+
+#map {
+    width: 100%;
+    height: 500px;
+    border: 2px solid #ccc;
+}
+
+/* Actions Section */
+#actions-container {
+    flex: 1;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#actions-container h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+#actions-container button {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#actions-container button:hover {
+    background-color: #0056b3;
+}
+
+
+/* Add these styles in dashboard.css */
+
+.hidden {
+    display: none;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content h2 {
+    margin-bottom: 15px;
+}
+
+.modal-content label {
+    display: block;
+    margin: 10px 0 5px;
+    text-align: left;
+}
+
+.modal-content input,
+.modal-content textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+.modal-buttons button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#submit-request {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#cancel-request {
+    background-color: #f44336;
+    color: white;
+}
+/* Modal Styling */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.modal-content h2 {
+    margin-bottom: 15px;
+}
+
+.modal-content form label {
+    display: block;
+    margin-top: 10px;
+    text-align: left;
+}
+
+.modal-content form input,
+.modal-content form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.modal-content .form-actions {
+    margin-top: 15px;
+}
+
+.modal-content .form-actions button {
+    padding: 10px 15px;
+    margin: 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.modal-content .form-actions button#cancel-request {
+    background-color: #f44336;
+    color: white;
+}
+
+.modal-content .form-actions button#submit-request {
+    background-color: #4CAF50;
+    color: white;
+}
+/* Phone Number Styling */
+#phone-input {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+#phone-input select {
+    width: 30%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#phone-input input {
+    width: 70%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Urgency Options */
+#urgency-options {
+    margin-top: 10px;
+    text-align: left;
+}
+
+#urgency-options label {
+    display: block;
+    margin-top: 5px;
+    font-weight: normal;
+}
+/* Urgency Options: Side by Side */
+#urgency-options {
+    margin-top: 10px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+#urgency-options label {
+    margin: 0;
+    font-weight: normal;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Submit and Cancel Buttons */
+#request-form-buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#request-form-buttons button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#request-form-buttons #submit-request {
+    background-color: #4caf50;
+    color: white;
+}
+
+#request-form-buttons #submit-request:hover {
+    background-color: #45a049;
+}
+
+#request-form-buttons #cancel-request {
+    background-color: #f44336;
+    color: white;
+}
+
+#request-form-buttons #cancel-request:hover {
+    background-color: #d32f2f;
+}
+/* Nearby Panel Styling */
+#nearby-panel {
+    position: fixed;
+    top: 50px;
+    right: 20px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    width: 300px;
+    max-height: 80%;
+    overflow-y: auto;
+}
+
+#nearby-panel.hidden {
+    display: none;
+}
+
+#nearby-requests-list {
+    margin: 10px 0;
+}
+
+#nearby-requests-list div {
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#nearby-requests-list button {
+    margin-top: 5px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+#nearby-requests-list button:hover {
+    background: #45a049;
+}
+#panel-controls {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#panel-controls button {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+#panel-controls button:hover {
+    background: #45a049;
+}
+
+#panel-controls button:nth-child(2) {
+    background: #2196F3;
+}
+
+#panel-controls button:nth-child(2):hover {
+    background: #1E88E5;
+}
+
+#panel-controls button:nth-child(3) {
+    background: #F44336;
+}
+
+#panel-controls button:nth-child(3):hover {
+    background: #E53935;
+}
+
+#map {
+    height: 500px;
+    width: 100%;
+}
+#toggle-heatmap {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+#toggle-heatmap:hover {
+    background-color: #45a049;
+}
